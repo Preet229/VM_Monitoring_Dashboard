@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VM Resource Monitoring Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Virtual Machine Monitoring Dashboard</h1>
+        <p>Real-Time System Resource Monitoring</p>
+    </header>
+
+    <main>
+        <section class="system-info">
+            <h2>System Information</h2>
+            <p>Operating System: <span id="system">Loading...</span></p>
+            <p>Processor: <span id="processor">Loading...</span></p>
+            <p>Status: <span class="online">● Online</span></p>
+        </section>
+
+        <section class="dashboard">
+            <div class="card">
+                <h2>CPU Usage</h2>
+                <div class="circle" id="cpu-circle">
+                    <span id="cpu">0%</span>
+                </div>
+                <p>Processor Utilization</p>
+            </div>
+
+            <div class="card">
+                <h2>RAM Usage</h2>
+                <div class="circle" id="ram-circle">
+                    <span id="memory">0%</span>
+                </div>
+                <p id="ram-details">Memory Used: 0 GB</p>
+            </div>
+
+            <div class="card">
+                <h2>Disk Usage</h2>
+                <div class="circle" id="disk-circle">
+                    <span id="disk">0%</span>
+                </div>
+                <p>Storage Utilization</p>
+            </div>
+        </section>
+
+        <section class="last-update">
+            <p>Last Updated: <span id="updated">Waiting...</span></p>
+            <button onclick="loadStats()">Refresh Now</button>
+        </section>
+    </main>
+
+    <footer>
+        Virtual Machine Resource Monitoring System | Python + Flask
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
